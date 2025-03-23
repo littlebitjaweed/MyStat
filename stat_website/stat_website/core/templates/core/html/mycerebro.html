@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'core/css/mycerebro.css' %}"> {% endblock %}
+{% block content %}
+
+
+<!-- Header Section -->
+<header class="header">
+  <h1>Welcome to MyCerebro</h1>
+  <p>Sports Management</p>
+</header>
+
+<!-- Phone Carousel Section -->
+<div class="carousel-container">
+  <div class="phone-frame">
+    <div class="carousel">
+      <div class="cards">
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1530651788726-1dbf58eeef1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=882&q=80');"></div>
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1559386484-97dfc0e15539?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80');"></div>
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1533461502717-83546f485d24?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60');"></div>
+      </div>
+    </div>
+    <div class="notch"></div>
+  </div>
+</div>
+
+<!-- General Info Section -->
+<section class="info-section">
+  <div class="info-content">
+    <h2>About MyCerebro</h2>
+    <p>
+        MyCerebro is the ultimate management app designed for sports coaches, athletes, and recruiters to streamline team operations, track performance metrics, and discover new talent.
+        Whether you're a coach analyzing player stats, an athlete monitoring your progress, or a recruiter scouting the next big star, MyCerebro provides real-time insights, advanced analytics, and seamless communication tools.
+        With features like automated performance reports, recruitment tracking, and training session planning, the app ensures that teams and individuals stay ahead of the game.
+    </p>
+  </div>
+  
+  <ul class="features-list">
+    <li>📊 Track your workouts and progress in real-time.</li>
+    <li>👥 Connect with friends and join sports communities.</li>
+    <li>🏆 Share your achievements and compete in challenges.</li>
+    <li>📅 Plan your training schedule and set goals.</li>
+    <li>📱 Sync with your favorite fitness devices and apps.</li>
+  </ul>
+</section>
+
+<script>
+const carousel = document.querySelector('.cards');
+
+carousel.addEventListener('mouseenter', () => {
+  carousel.style.animationPlayState = 'paused';
+});
+
+carousel.addEventListener('mouseleave', () => {
+  carousel.style.animationPlayState = 'running';
+});
+</script>
+
+{% endblock %}

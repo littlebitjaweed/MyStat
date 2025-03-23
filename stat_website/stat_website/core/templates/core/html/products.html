@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Our Products {% endblock %} {% block extra_css %}<link rel="stylesheet" href="{% static 'core/css/products.css'%}" />
+{% endblock %} {% block content %}
+<div class="products-page">
+  <h1 class="mb-5 text-center" style="font-weight: bolder">Our Products</h1>
+  <div class="products-container">
+    <div class="card text-bg-dark">
+      <a href="{% url 'mystat' %}">
+        <img src="{% static 'core/images/neuron.png' %}" class="card-img" alt="Error" />
+      </a>
+      <div class="card-img-overlay">
+        <h5 class="card-title">Neuron</h5>
+        <p class="card-text">The central intelligence system.</p>
+        <p class="card-text"><small>For the Strategist.</small></p>
+      </div>
+    </div>
+    <div class="card text-bg-dark">
+      <a href="{% url 'mystat' %}">
+        <img src="{% static 'core/images/statimg.jpg' %}" class="card-img" alt="Error" />
+      </a>
+      <div class="card-img-overlay">
+        <h5 class="card-title">MyStat</h5>
+        <p class="card-text">A powerful analytics tool for deep insights.</p>
+        <p class="card-text"><small>For the Player.</small></p>
+      </div>
+    </div>
+    <div class="card text-bg-dark">
+      <a href="{% url 'mycerebro' %}">
+        <img src="{% static 'core/images/cerebroimg.jpg' %}" class="card-img" alt="Error" />
+      </a>
+      <div class="card-img-overlay">
+        <h5 class="card-title">MyCerebro</h5>
+        <p class="card-text">Control the field.</p>
+        <p class="card-text"><small>For the Coach.</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<div class="products-container">
+  <div class="product neuron">Neuron</div>
+  <div class="bottom-container">
+    <div class="MyStat">MyStat</div>
+    <div class="Cerebro">Cerebro</div>
+  </div> -->
+<!-- </div> -->
+{% endblock %}

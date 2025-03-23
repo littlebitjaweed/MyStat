@@ -1,0 +1,105 @@
+{% extends 'base.html' %} {% load static %} {% block title %} MyStat {% endblock %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/home.css' %}" />
+{% endblock %} {% block content %}
+
+<div class="header">
+  <h1>Welcome to MyStat</h1>
+  <b2 />
+  <h3 class="h3"><i>Rise.Conquer.Persevere! </i></h3>
+  <!-- <button onclick="scrollToContent()">Get Started</button> -->
+</div>
+
+<!-- Phone Container Section -->
+<div class="container left">
+  <img class="iphone" src="{% static 'core/images/iphonemain1.png' %}" />
+  <div class="text-box">
+    <h2 class="infobox">Your one stop sports app.</h2>
+  </div>
+</div>
+
+<div class="container right">
+  <img class="iphone" src="{% static 'core/images/iphonemain1.png' %}" />
+  <div class="text-box">
+    <h2 class="infobox">Post your updates!</h2>
+  </div>
+</div>
+
+<div class="container left">
+  <img class="iphone" src="{% static 'core/images/iphonemain1.png' %}" />
+  <div class="text-box">
+    <h2 class="infobox">Connect with coaches and players.</h2>
+  </div>
+</div>
+
+<div class="container right">
+  <img class="iphone" src="{% static 'core/images/iphonemain1.png' %}" />
+  <div class="text-box">
+    <h2 class="infobox">Recruit other players for your team.</h2>
+  </div>
+</div>
+
+<div class="container left">
+  <img class="iphone" src="{% static 'core/images/iphonemain1.png' %}" />
+  <div class="text-box">
+    <h2 class="infobox">Monitor your stats.</h2>
+  </div>
+</div>
+
+<div class="container right">
+  <img class="iphone" src="{% static 'core/images/iphonemain1.png' %}" />
+  <div class="text-box">
+    <h2 class="infobox">Be the Best.</h2>
+  </div>
+</div>
+{% endblock %} {% block extra_js %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Create the Intersection Observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Add the fade-in class when element is visible
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+            // Stop observing once animation is triggered
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null, // viewport
+        threshold: 0.1, // trigger when at least 10% of the element is visible
+        rootMargin: "0px 0px -50px 0px", // slightly before element enters viewport
+      }
+    );
+
+    // Observe all container elements
+    document.querySelectorAll(".container").forEach((container) => {
+      observer.observe(container);
+    });
+
+    // Optional: Add fade-in to header as well
+    const header = document.querySelector(".header");
+    if (header) {
+      header.style.opacity = 0;
+      header.style.transform = "translateY(-20px)";
+      header.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+
+      // Fade in header immediately after page load
+      setTimeout(() => {
+        header.style.opacity = 1;
+        header.style.transform = "translateY(0)";
+      }, 200);
+    }
+
+    // Optional: Enable the commented-out scroll button if needed
+    function scrollToContent() {
+      document.querySelector(".container").scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Uncomment if you enable the button in your HTML
+    // document.querySelector('button').addEventListener('click', scrollToContent);
+  });
+</script>
+{% endblock%}

@@ -1,0 +1,84 @@
+{% extends 'base.html' %} {% load static %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/mystat.css' %}" />
+{% endblock %} {% block content %}
+
+<!-- Header Section -->
+<section class="heads">
+  <header class="header">
+    <h1>Welcome to MyStat</h1>
+    <p>Sports social media</p>
+  </header>
+</section>
+
+<!-- Phone Insta ? -->
+<section class="left">
+  <div class="content-container">
+    <div class="instaphone">
+      <div class="bginsta"></div>
+    </div>
+    <div class="info-content">
+      <h2>About MyStat</h2>
+      <p>
+        MyStat is the ultimate sports social media app designed for athletes, fitness enthusiasts, and sports lovers. Track your progress, connect with friends, and share your achievements with the world. Whether you're a runner, cyclist, or
+        gym-goer, MyStat helps you stay motivated and reach your goals.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- Second instaphone -->
+<section class="right">
+  <div class="content-container">
+    <div class="info-content">
+      <h2>Share Your Achievements</h2>
+      <p>Showcase your hard work and celebrate every milestone. Post about your latest victories, upload photos and videos, and let the world see your athletic journey unfold.</p>
+    </div>
+    <div class="instaphone">
+      <div class="bginsta"></div>
+    </div>
+  </div>
+</section>
+<!-- Third instaphone -->
+<section class="left">
+  <div class="content-container">
+    <div class="instaphone">
+      <div class="bginsta"></div>
+    </div>
+    <div class="info-content">
+      <h2>Stay Updated</h2>
+      <p>Never miss a moment with personalized sports news. Get the latest updates on matches, teams, and players, all tailored to your interests.</p>
+    </div>
+  </div>
+</section>
+<!-- Fourth instaphone-->
+<section class="right">
+  <div class="content-container">
+    <div class="info-content">
+      <h2>Connect with Athletes</h2>
+      <p>Join a community of passionate players. Follow fellow athletes, share tips, and stay inspired as you connect with others who share your love for the game.</p>
+    </div>
+    <div class="instaphone">
+      <div class="bginsta"></div>
+    </div>
+  </div>
+</section>
+<!-- General Info Section -->
+<!-- <div class="parent">
+  <img src="{% static 'core/images/mystat1.jpg' %}" alt="MyStat Logo" />
+  <h2>Welcome to MyStat</h2>
+  <p>Track your game stats, post highlights, and connect with your sports community.</p>
+  <button>Get Started</button>
+</div> -->
+
+<script>
+  const carousel = document.querySelector(".cards");
+
+  carousel.addEventListener("mouseenter", () => {
+    carousel.style.animationPlayState = "paused";
+  });
+
+  carousel.addEventListener("mouseleave", () => {
+    carousel.style.animationPlayState = "running";
+  });
+</script>
+
+{% endblock %}
